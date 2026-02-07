@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 Sports Players Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #b3e5fc, #ffccbc);
+      color: #333;
+    }
+    header {
+      background: #ff5722;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      font-size: 26px;
+    }
+    nav {
+      text-align: center;
+      margin-top: 15px;
+    }
+    nav button {
+      margin: 6px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background: #fff;
+      color: #ff5722;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #ffe0d6;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 12px 0 6px;
+      color: #ff5722;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🏆 Sports Players Gallery
+  <nav>
+    <button onclick="filterSport('all')">All</button>
+    <button onclick="filterSport('soccer')">Soccer</button>
+    <button onclick="filterSport('volleyball')">Volleyball</button>
+    <button onclick="filterSport('badminton')">Badminton</button>
+  </nav>
+</header>
+
+<section class="container">
+
+  <div class="card soccer">
+    <img src="https://via.placeholder.com/300?text=Soccer+Player" alt="Soccer Player">
+    <h3>Lionel Messi</h3>
+    <p>Soccer 🇦🇷</p>
+  </div>
+
+  <div class="card soccer">
+    <img src="https://via.placeholder.com/300?text=Soccer+Player+2" alt="Soccer Player">
+    <h3>Cristiano Ronaldo</h3>
+    <p>Soccer 🇵🇹</p>
+  </div>
+
+  <div class="card volleyball">
+    <img src="${turn0image4.src}" alt="Volleyball Players">
+    <h3>Volleyball Team</h3>
+    <p>Volleyball 🏐</p>
+  </div>
+
+  <div class="card badminton">
+    <img src="https://via.placeholder.com/300?text=Badminton+Player" alt="Badminton Player">
+    <h3>P. V. Sindhu</h3>
+    <p>Badminton 🏸</p>
+  </div>
+
+  <div class="card badminton">
+    <img src="https://via.placeholder.com/300?text=Badminton+Player+2" alt="Badminton Player">
+    <h3>Top Badminton Star</h3>
+    <p>Badminton 🏸</p>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Sports Gallery — All Rights Reserved
+</footer>
+
+<script>
+  function filterSport(sport) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      if (sport === 'all' || card.classList.contains(sport)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
